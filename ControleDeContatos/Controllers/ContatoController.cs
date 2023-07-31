@@ -14,7 +14,8 @@ public class ContatoController : Controller
     // GET
     public IActionResult Index()
     {
-        return View();
+        var contato = _contatoRepository.BuscarTodos();
+        return View(contato);
     }
     public IActionResult Criar()
     {

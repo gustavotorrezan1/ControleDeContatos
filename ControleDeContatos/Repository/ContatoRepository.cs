@@ -10,6 +10,12 @@ public class ContatoRepository : IContatoRepository
     {
         _bancoContext = bancoContext;
     }
+
+    public List<ContatoModel> BuscarTodos()
+    {
+        return _bancoContext.Contato.ToList();
+    }
+
     public ContatoModel Adicionar(ContatoModel contato)
     {
         _bancoContext.Contato.Add(contato);
