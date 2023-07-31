@@ -1,5 +1,4 @@
-﻿@model dynamic
-
+﻿@model ContatoModel
 @{
     ViewBag.Title = "Criar contato";
     Layout = "_Layout";
@@ -7,15 +6,19 @@
 <div class="text-center">
     <h1 class="display-4">Cadastro de contato</h1>
 </div>
-<div class="mb-3">
-    <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control">
-    <label for="celular" class="form-label">Celular</label>
-    <input type="number" class="form-control">
-</div>
-<div class="d-grid gap-2">
-    <button type="submit" class="btn btn-primary">Salvar</button>
-    <a class="btn btn-secondary" asp-controller="Contato" asp-action="Index">Voltar</a>
-</div>
+<form asp-controller="Contato" asp-action="Criar" method="post">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control">
+
+        <label for="email" class="form-label">Email</label>
+        <input type="email" asp-for="Email" class="form-control">
+
+        <label for="celular" class="form-label">Celular</label>
+        <input type="number" asp-for="Celular" class="form-control">
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a class="btn btn-secondary" asp-controller="Contato" asp-action="Index">Voltar</a>
+    </div>
+</form>

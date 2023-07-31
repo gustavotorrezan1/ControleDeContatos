@@ -1,11 +1,12 @@
 using ControleDeContatos.Data;
+using ControleDeContatos.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // String de conecção
 builder.Services.AddDbContext<BancoContext>(options => options.UseSqlServer("Server=localhost,1433;Database=Db_SistemaContatos;User ID=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True"));
-
+builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
