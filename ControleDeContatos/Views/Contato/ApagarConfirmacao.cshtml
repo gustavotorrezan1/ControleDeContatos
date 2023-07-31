@@ -1,0 +1,13 @@
+﻿@model dynamic
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Confirmação apagar contato";
+}
+<div class="text-center">
+    <h3>Realmente deseja apagar o contato(...):</h3>
+</div>
+<div class="d-grid gap-2">
+    <a class="btn btn-primary">Sim</a>
+    <a class="btn btn-danger"asp-controller="Contato" asp-action="Index">Não</a>
+</div>
