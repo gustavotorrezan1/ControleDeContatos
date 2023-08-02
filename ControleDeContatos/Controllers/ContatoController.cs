@@ -11,24 +11,33 @@ public class ContatoController : Controller
     {
         _contatoRepository = contatoRepository;
     }
-    // GET
+
+    #region Get
+
     public IActionResult Index()
     {
         var contato = _contatoRepository.BuscarTodos();
         return View(contato);
     }
-    public IActionResult Criar()
+    public IActionResult Editar(int id)
     {
-        return View();
+        var contato = _contatoRepository.ListarPorId(id);
+        return View(contato);
     }
-    public IActionResult Editar()
+    public IActionResult Apagar(int id)
     {
-        return View();
+        _contatoRepository.Apagar(id);
+        return RedirectToAction("Index");
     }
-    public IActionResult ApagarConfirmacao()
+    public IActionResult ApagarConfirmacao(int id)
     {
-        return View();
+        var contato = _contatoRepository.ListarPorId(id);
+        return View(contato);
     }
+
+    #endregion
+
+    #region Set
 
     [HttpPost]
     public IActionResult Criar(ContatoModel contato)
@@ -36,4 +45,25 @@ public class ContatoController : Controller
         _contatoRepository.Adicionar(contato);
         return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public IActionResult Alterar(ContatoModel contato)
+    {
+        _contatoRepository.Atualizar(contato);
+        return RedirectToAction("Index");
+    }
+
+    #endregion
+
+    #region Redirect
+
+    public IActionResult Criar()
+    {
+        return View();
+    }
+
+    #endregion
+
+
+
 }
