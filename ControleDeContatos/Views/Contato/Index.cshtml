@@ -25,38 +25,38 @@
             @TempData["MensagemErro"]
         </div>
     }
-<br/>
-    <h1 class="display-4">Lista de contatos</h1>
+    <br/>
 
-    <table class="table" id="table-contatos">
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Celular</th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-        @if (Model != null && Model.Any())
-        {
-            foreach (var contato in Model)
-            {
-                <tr>
-                    <th scope="row">@contato.Id</th>
-                    <td>@contato.Nome</td>
-                    <td>@contato.Email</td>
-                    <td>@contato.Celular</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a role="button" class="btn btn-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
-                            <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ApagarConfirmacao">Apagar</a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        }
-        </tbody>
-    </table>
+<h1 class="display-4">Lista de contatos</h1>
 </div>
+<table class="table table-striped table-hover" id="table-contatos">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Celular</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var contato in Model)
+        {
+            <tr>
+                <th scope="row">@contato.Id</th>
+                <td>@contato.Nome</td>
+                <td>@contato.Email</td>
+                <td>@contato.Celular</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ApagarConfirmacao">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
