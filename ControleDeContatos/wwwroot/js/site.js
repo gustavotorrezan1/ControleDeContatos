@@ -30,7 +30,8 @@ var idioma= {
 $(document).ready( function () {
     $('#table-contatos').DataTable({
         "paging": true,
-        "lengthChange": true,
+        "lengthChange": false,
+        "pageLength": 50,
         "searching": true,
         "ordering": true,
         "info": true,
