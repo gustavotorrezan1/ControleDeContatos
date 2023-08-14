@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // String de conecção
 
-builder.Services.AddDbContext<BancoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+builder.Services.AddDbContext<BancoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Online")));
 builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 
 //builder.Services.AddDbContext<BancoContext>(options => options.UseSqlServer("Server=aws.connect.psdb.cloud;Database=db_sistemacontatos;user=civ1axn795le27p5dlgc;password=pscale_pw_M6eTZwXsFB4mBnyXoyv9e2fIXGfn0g1dk8vdfNUfKns;S"));
