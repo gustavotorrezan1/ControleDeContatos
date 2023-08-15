@@ -10,7 +10,7 @@
         <entry key="Common:noTransactions" value="false" />
         <entry key="Common:outputFilePath" value="script.sql" />
         <entry key="Common:outputFolder" value="Migrations" />
-        <entry key="Common:useDefaultConnection" value="true" />
+        <entry key="Common:useDefaultConnection" value="false" />
       </map>
     </option>
   </component>
